@@ -123,9 +123,9 @@ namespace Complete
 					Instantiate (m_Shell, m_FireTransform.position, m_FireTransform.rotation) as Rigidbody;
 
             // Set the shell's velocity to the launch force in the fire position's forward direction
-            shellInstance.velocity = m_CurrentLaunchForce * m_FireTransform.forward; 
+            shellInstance.linearVelocity = m_CurrentLaunchForce * m_FireTransform.forward; 
 			if (m_AltFire)
-				shellInstance.velocity *= 1.50f;
+				shellInstance.linearVelocity *= 1.50f;
 
             // Change the clip to the firing clip and play it
             m_ShootingAudio.clip = m_FireClip;
