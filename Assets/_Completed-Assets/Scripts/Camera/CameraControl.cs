@@ -1,12 +1,17 @@
 ﻿using UnityEngine;
 
-namespace Complete
+namespace Complete.Cameras
 {
+    /// <summary>
+    /// Controls the camera's position and size to ensure all targets are visible.
+    /// Supports split-screen switching based on distance between targets.
+    /// </summary>
     public class CameraControl : MonoBehaviour
     {
         public float m_DampTime = 0.2f;                 // Approximate time for the camera to refocus
         public float m_ScreenEdgeBuffer = 4f;           // Space between the top/bottom most target and the screen edge
         public float m_MinSize = 6.5f;                  // The smallest orthographic size the camera can be
+        public float m_PredictiveWeight = 0.5f;         // Multiplier for predictive offset based on target velocity
         [HideInInspector] public Transform[] m_Targets; // All the targets the camera needs to encompass
 
 
@@ -114,10 +119,18 @@ namespace Complete
 
                 // Add to the average and increment the number of targets in the average
                 averagePos += m_Targets[i].position;
+
+                // Add predictive offset if target has a Rigidbody
+                Rigidbody targetRigidbody = m_Targets[i].GetComponent<Rigidbody>();
+                if (targetRigidbody != null)
+                {
+                    averagePos += targetRigidbody.linearVelocity * m_PredictiveWeight;
+                }
+
                 numTargets++;
             }
 
-            // If there are targets divide the sum of the positions by the number of them to find the average
+            // If there are targets, divide the sum of the positions by the number of them to find the average
             if (numTargets > 0)
             {
                 averagePos /= numTargets;

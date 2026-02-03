@@ -1,8 +1,12 @@
 ﻿using UnityEngine;
 using UnityEngine.UI;
 
-namespace Complete
+namespace Complete.Tank
 {
+    /// <summary>
+    /// Handles the shooting mechanism of the tank, including charging and firing shells.
+    /// Supports both standard and alternate firing modes.
+    /// </summary>
     public class TankShooting : MonoBehaviour
     {
         public int m_PlayerNumber = 1;              // Used to identify the different players

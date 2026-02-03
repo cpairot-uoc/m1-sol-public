@@ -1,7 +1,11 @@
 ﻿using UnityEngine;
 
-namespace Complete
+namespace Complete.Tank
 {
+    /// <summary>
+    /// Handles the movement and rotation of a tank based on player input.
+    /// Also manages the engine audio based on whether the tank is moving or idling.
+    /// </summary>
     public class TankMovement : MonoBehaviour
     {
         public int m_PlayerNumber = 1;              // Used to identify which tank belongs to which player. This is set by this tank's manager

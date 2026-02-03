@@ -1,10 +1,15 @@
+using Complete.Cameras;
 using System.Collections;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
-namespace Complete
+namespace Complete.Managers
 {
+    /// <summary>
+    /// Manages the game's flow across different phases: Starting, Playing, and Ending.
+    /// Handles spawning tanks, setting up cameras, and tracking round winners.
+    /// </summary>
     public class GameManager : MonoBehaviour
     {
         public int m_NumRoundsToWin = 5;            // The number of rounds a single player has to win to win the game

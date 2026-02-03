@@ -1,7 +1,11 @@
 ﻿using UnityEngine;
 
-namespace Complete
+namespace Complete.UI
 {
+    /// <summary>
+    /// Ensures that world space UI elements, such as health bars, maintain a consistent rotation.
+    /// This prevents them from rotating along with their parent game object.
+    /// </summary>
     public class UIDirectionControl : MonoBehaviour
     {
         // This class is used to make sure world space UI

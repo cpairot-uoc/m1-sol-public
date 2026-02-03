@@ -1,8 +1,11 @@
 ﻿using UnityEngine;
 using UnityEngine.UI;
 
-namespace Complete
+namespace Complete.Tank
 {
+    /// <summary>
+    /// Manages the health of a tank, handles taking damage and the eventual death of the tank.
+    /// </summary>
     public class TankHealth : MonoBehaviour
     {
         public float m_StartingHealth = 100f;               // The amount of health each tank starts with

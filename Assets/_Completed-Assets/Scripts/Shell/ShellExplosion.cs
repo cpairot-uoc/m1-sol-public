@@ -1,7 +1,11 @@
+using Complete.Tank;
 using UnityEngine;
 
-namespace Complete
+namespace Complete.Shell
 {
+    /// <summary>
+    /// Handles the behavior of the tank shells, including explosion effects and damage calculation.
+    /// </summary>
     public class ShellExplosion : MonoBehaviour
     {
         public LayerMask m_TankMask;                        // Used to filter what the explosion affects, this should be set to "Players"

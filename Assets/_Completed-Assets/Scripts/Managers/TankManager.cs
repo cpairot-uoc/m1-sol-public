@@ -1,8 +1,13 @@
-﻿using System;
+﻿using Complete.Tank;
+using System;
 using UnityEngine;
 
-namespace Complete
+namespace Complete.Managers
 {
+    /// <summary>
+    /// Manages various settings and components for a single tank.
+    /// Works with GameManager to control tank behavior during different game phases.
+    /// </summary>
     [Serializable]
     public class TankManager
     {
